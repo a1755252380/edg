@@ -1,71 +1,88 @@
 <template>
   <div class="home">
+    <!-- <remote-js src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/three.js/72/three.min.js"></remote-js> -->
     <main>
       <div id="left">
         <div class="meter">
           <p>color</p>
-          <input type="color"
-                 id="color"
-                 value="#ffffff"
-                 onclick="setColor()">
+          <input
+            type="color"
+            id="color"
+            value="#ffffff"
+            onclick="setColor()"
+          >
         </div>
         <div class="meter">
           <p>image</p>
-          <input type="file"
-                 id="texture"
-                 accept="image/png,image/jpeg,image/gif"
-                 onchange="loadTexture(this.files)">
+          <input
+            type="file"
+            id="texture"
+            accept="image/png,image/jpeg,image/gif"
+            onchange="loadTexture(this.files)"
+          >
         </div>
         <div class="meter">
           <p>camera</p>
-          <input type="range"
-                 id="angle"
-                 value="-24"
-                 min="-180"
-                 max="180"
-                 oninput="setCamera()">
+          <input
+            type="range"
+            id="angle"
+            value="-24"
+            min="-180"
+            max="180"
+            oninput="setCamera()"
+          >
           <span id="textAngle">[0°]</span>
         </div>
         <div class="meter">
           <p>horizontal</p>
-          <input type="range"
-                 id="h"
-                 value="0.5"
-                 min="0"
-                 max="1.0"
-                 step="0.1">
+          <input
+            type="range"
+            id="h"
+            value="0.5"
+            min="0"
+            max="1.0"
+            step="0.1"
+          >
         </div>
         <div class="meter">
           <p>vertical</p>
-          <input type="range"
-                 id="v"
-                 value="0.3"
-                 min="0"
-                 max="1.0"
-                 step="0.1">
+          <input
+            type="range"
+            id="v"
+            value="0.3"
+            min="0"
+            max="1.0"
+            step="0.1"
+          >
         </div>
         <div class="meter">
           <p>swing</p>
-          <input type="range"
-                 id="w"
-                 value="0.2"
-                 min="0"
-                 max="1.0"
-                 step="0.1">
+          <input
+            type="range"
+            id="w"
+            value="0.2"
+            min="0"
+            max="1.0"
+            step="0.1"
+          >
         </div>
         <div class="meter">
           <p>speed</p>
-          <input type="range"
-                 id="s"
-                 value="0.5"
-                 min="0"
-                 max="1.0"
-                 step="0.1">
+          <input
+            type="range"
+            id="s"
+            value="0.5"
+            min="0"
+            max="1.0"
+            step="0.1"
+          >
         </div>
         <div class="meter">
-          <input type="button"
-                 value="UNDO"
-                 onclick="initFlag()">
+          <input
+            type="button"
+            value="UNDO"
+            onclick="initFlag()"
+          >
         </div>
       </div>
       <div id="right">
@@ -77,8 +94,6 @@
 
 <script>
 
-
-import * as THREE from 'three'
 import "../assets/html.js"
 export default {
   name: 'Home',
@@ -88,7 +103,16 @@ export default {
   },
   destroyed () {
     $("body").css("overflow", "")
-  }
+  },
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    // 'remote-js': {
+    //   render (createElement) {
+    //     return createElement('script', { attrs: { type: 'text/javascript', src: this.src } });
+    //   },
+
+    // }
+  },
 }
 </script>
 <style lang="scss" scoped>
